@@ -7,16 +7,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // Check localStorage for existing darkMode preference
+  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+
+  const [darkMode, setDarkMode] = useState(savedDarkMode);
   const [menuOpen, isMenuOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true"); // Save dark mode preference
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false"); // Save light mode preference
     }
   }, [darkMode]);
+
   return (
     <>
       <AnimatePresence>
@@ -78,7 +84,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <nav className="bg-white sticky top-0 z-10 flex dark:bg-black p-4 md:hidden w-full justify-between shadow-lg dark:shadow-[#ffffff19]">
+      <nav className="bg-white sticky top-0 z-10 flex dark:bg-black p-4 md:hidden w-full justify-between shadow-2xl dark:shadow-[#bbbbbb17]">
         <img src={Logo} width={40} height={40} className="ml-5 " />
         <div className="max-w-screen-xl">
           <button className="m-5" onClick={() => isMenuOpen(!menuOpen)}>
@@ -86,7 +92,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <nav className="bg-white hidden sticky top-0 dark:bg-black p-4 md:flex w-full justify-center shadow-lg">
+      <nav className="bg-white hidden sticky top-0 dark:bg-black p-4 md:flex w-full justify-center  shadow-2xl dark:shadow-[#bbbbbb17]">
         <div className="flex justify-between w-[90%] max-w-screen-xl">
           <img src={Logo} width={40} height={40} className=" " />
           <ul className="flex space-x-4 my-auto">
