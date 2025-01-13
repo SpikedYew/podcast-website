@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.91 465.26">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 76.31px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: Futura-Bold, Futura;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        font-size: 123.47px;
+      }
+
+      .cls-3 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(0 347.89)"><tspan class="cls-4" x="0" y="0">S</tspan><tspan x="81" y="0">tudio</tspan></text>
+  <text class="cls-1" transform="translate(95.42 435.75)"><tspan x="0" y="0">Usz</tspan><tspan class="cls-3" x="145.98" y="0">k</tspan><tspan x="196.66" y="0">o</tspan></text>
+  <path d="M186.98,232.12c-1.22.03-2.16-2.89-2.85-4.88C165.68,174.02,60.08,19.6,81.55,1.84c12.66-10.47,71.68,24.75,100.8,77.68,39.48,71.76,10.99,152.44,4.62,152.59Z"/>
+  <path d="M239.69,229.35c-12.24-5.85,15.26-131.46,55.49-134.1,25.16-1.65,49.54,45.2,58.26,73.06,4.49,14.34,11.65,45.45,2.77,49.94-6.4,3.24-13.96.6-60.41-63.2-1.58,12.82-15.47,30.48-33.92,53.95-6.96,8.85-17.69,22.5-22.2,20.35Z"/>
+</svg>
