@@ -6,10 +6,11 @@
 
 /* Default light mode styles */
 body {
-  @apply bg-white text-black; /* Light background and text */
+  @apply dark:bg-dark bg-light; /* Light background and text */
 }
 
 /* Dark mode styles */
 html.dark body {
-  @apply bg-black text-white; /* Dark background and white text */
+  @apply dark:bg-dark bg-light; /* Dark background and white text */
 }
+/* Light mode */

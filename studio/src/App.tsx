@@ -86,15 +86,15 @@ function PageWrapper({ children }: PageWrapperProps) {
         }}
       ></motion.div> */}
 
-      <motion.div
+      <motion.main
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
+        exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 1 }}
-        className="z-10"
+        className="z-1"
       >
         {children}
-      </motion.div>
+      </motion.main>
     </>
   );
 }
