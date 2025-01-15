@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./sub-pages/Home";
 import About from "./sub-pages/About";
 import Kontakt from "./sub-pages/Kontakt";
+import Studio from "./sub-pages/Studio";
 import Fotter from "./components/Fotter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode } from "react";
@@ -18,6 +19,14 @@ function AnimateRoutes() {
           element={
             <PageWrapper>
               <Home />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/studio"
+          element={
+            <PageWrapper>
+              <Studio />
             </PageWrapper>
           }
         />

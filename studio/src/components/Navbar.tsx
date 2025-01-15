@@ -1,7 +1,7 @@
 // Navbar.tsx
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo-test.svg";
-import LogoDark from "../assets/logoDark.svg";
+import Logo from "../assets/logo-site-light.svg";
+import LogoDark from "../assets/logo-site-dark.svg";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -78,6 +78,14 @@ const Navbar = () => {
                     Home
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/studio"
+                    className="text-dark font-bold hover:font-extrabold dark:text-light"
+                  >
+                    Studio
+                  </Link>
+                </li>
                 <li className="mb-2">
                   <Link
                     to="/o-nas"
@@ -130,9 +138,9 @@ const Navbar = () => {
       >
         <div className="flex justify-between w-[90%] max-w-screen-xl">
           {!darkMode ? (
-            <img src={Logo} width={40} height={40} />
+            <img src={Logo} width={100} height={40} />
           ) : (
-            <img src={LogoDark} width={40} height={40} />
+            <img src={LogoDark} width={100} height={40} />
           )}
           <ul className="flex space-x-4 my-auto">
             <li>
@@ -141,6 +149,14 @@ const Navbar = () => {
                 className="text-dark font-bold hover:font-extrabold dark:text-light"
               >
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/studio"
+                className="text-dark font-bold hover:font-extrabold dark:text-light"
+              >
+                Studio
               </Link>
             </li>
             <li>
