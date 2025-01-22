@@ -1,3 +1,8 @@
+import UsComponent from "../components/UsAbout";
 export default function About() {
-  return <div>About</div>;
+  return (
+    <div>
+      <UsComponent />
+    </div>
+  );
 }

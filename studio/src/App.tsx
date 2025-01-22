@@ -8,8 +8,12 @@ import Studio from "./sub-pages/Studio";
 import Fotter from "./components/Fotter";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode } from "react";
+import { useEffect, useState } from "react";
+export interface DarkMode {
+  darkMode: boolean;
+}
 
-function AnimateRoutes() {
+function AnimateRoutes({ darkMode }: DarkMode) {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
@@ -18,7 +22,7 @@ function AnimateRoutes() {
           path="/"
           element={
             <PageWrapper>
-              <Home />
+              <Home darkMode={darkMode} />
             </PageWrapper>
           }
         />
@@ -109,14 +113,27 @@ function PageWrapper({ children }: PageWrapperProps) {
 }
 
 function App() {
+  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+
+  const [darkMode, setDarkMode] = useState(savedDarkMode);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true"); // Save dark mode preference
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false"); // Save light mode preference
+    }
+  }, [darkMode]);
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-        <AnimateRoutes />
+        <AnimateRoutes darkMode={darkMode} />
+        <Fotter />
       </BrowserRouter>
-      <Fotter />
     </>
   );
 }

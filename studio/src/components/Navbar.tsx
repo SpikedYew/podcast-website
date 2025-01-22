@@ -7,7 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { Sun, Moon, Menu, X } from "lucide-react";
 
-const Navbar = () => {
+export interface DarkMode {
+  darkMode: boolean;
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar = ({ darkMode, setDarkMode }: DarkMode) => {
   const [isShrunk, setIsShrunk] = useState(false);
 
   useEffect(() => {
@@ -25,20 +30,8 @@ const Navbar = () => {
   }, []);
 
   // Check localStorage for existing darkMode preference
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
 
-  const [darkMode, setDarkMode] = useState(savedDarkMode);
   const [menuOpen, isMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("darkMode", "true"); // Save dark mode preference
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("darkMode", "false"); // Save light mode preference
-    }
-  }, [darkMode]);
 
   return (
     <>
@@ -134,7 +127,7 @@ const Navbar = () => {
           width: "100%",
         }}
         transition={{ duration: 0.5 }}
-        className="bg-light dark:bg-dark hidden sticky top-0  p-4 md:flex min-w-full justify-center  shadow-2xl dark:shadow-[#bbbbbb17]"
+        className="bg-light dark:bg-dark hidden sticky top-0 z-10  p-4 md:flex min-w-full justify-center  shadow-2xl dark:shadow-[#bbbbbb17]"
       >
         <div className="flex justify-between w-[90%] max-w-screen-xl">
           {!darkMode ? (
