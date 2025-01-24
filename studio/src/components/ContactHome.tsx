@@ -1,11 +1,11 @@
 export default function ContactHome() {
   return (
     <>
-      <div className="max-w-[92vw] sm:max-w-6xl mx-auto">
-        <h1 className="text-2xl font-bold mb-6 text-dark dark:text-light text-center">
+      <div className="max-w-[92vw] sm:max-w-6xl mt-12 mb-12 mx-auto">
+        <h1 className="text-2xl font-bold text-dark mb-8 dark:text-light text-center">
           Kontakt
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 text-dark dark:text-light">
           <div className="p-10">
             <h1 className="text-xl font-bold mb-4">Zadzwoń do nas!</h1>
             <div className="flex justify-between mb-2">

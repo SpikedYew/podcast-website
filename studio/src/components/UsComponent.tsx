@@ -16,6 +16,11 @@ export default function UsComponent() {
             veritatis numquam neque accusamus, sed dolorem eius, exercitationem
             magni quia nihil corporis.
           </p>
+          <div className="mt-4 text-center md:text-left">
+            <button className="px-6 py-2 bg-dark text-white rounded-md">
+              Learn More
+            </button>
+          </div>
         </div>
         <LazyLoadImage
           src={Photo2}
@@ -34,6 +39,11 @@ export default function UsComponent() {
             veritatis numquam neque accusamus, sed dolorem eius, exercitationem
             magni quia nihil corporis.
           </p>
+          <div className="mt-4 text-center md:text-left">
+            <button className="px-6 py-2 bg-dark text-white rounded-md">
+              Learn More
+            </button>
+          </div>
         </div>
         <LazyLoadImage
           src={Photo3}

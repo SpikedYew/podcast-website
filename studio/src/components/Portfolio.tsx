@@ -52,13 +52,13 @@ const Portfolio = ({ darkMode }: DarkMode) => {
   return (
     <>
       <motion.div
-        className="sm:max-w-6xl mx-auto p-4 mt-4 mb-4 max-w-[98vw]"
+        className="sm:max-w-6xl mx-auto p-4 mt-12 mb-4 max-w-[98vw]"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
-        <h1 className="text-2xl font-bold mb-6 text-dark dark:text-light text-center">
+        <h1 className="font-bold text-xl md:text-2xl mb-6 text-dark dark:text-light text-center">
           Realizacje
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
