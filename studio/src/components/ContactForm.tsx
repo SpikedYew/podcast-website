@@ -1,15 +1,35 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
+interface Email {
+  from_name: string;
+  from_email: string;
+  message: string;
+}
+
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false); // Loading state to handle async request
 
   // Honeypot field check
   const [honeypot, setHoneypot] = useState("");
+  const [formData, setFormData] = useState<Email>({
+    from_name: "",
+    from_email: "",
+    message: "",
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFormData({ from_name: "", from_email: "", message: "" });
 
     // If honeypot field is filled out, it's likely a bot
     if (honeypot) {
@@ -47,38 +67,53 @@ export default function ContactForm() {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="flex flex-col gap-4 p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md"
+      className="flex flex-col gap-6 w-[100%] max-w-[98vw] p-6 md:max-w-lg mx-auto bg-gray-50 dark:bg-gray-50 dark:border shadow-md"
     >
-      <label htmlFor="name" className="font-bold text-lg text-gray-700">
-        Name
+      <label
+        htmlFor="name"
+        className="font-bold text-lg text-dark dark:text-light"
+      >
+        Imię
       </label>
       <input
+        value={formData.from_name}
+        onChange={handleChange}
         type="text"
         id="name"
         name="from_name"
         required
-        className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+        className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-dark"
       />
 
-      <label htmlFor="email" className="font-bold text-lg text-gray-700">
-        Email
+      <label
+        htmlFor="email"
+        className="font-bold text-lg text-dark dark:text-light"
+      >
+        E-mail
       </label>
       <input
+        value={formData.from_email}
+        onChange={handleChange}
         type="email"
         id="email"
         name="from_email"
         required
-        className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+        className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-dark"
       />
 
-      <label htmlFor="message" className="font-bold text-lg text-gray-700">
-        Message
+      <label
+        htmlFor="message"
+        className="font-bold text-lg text-dark dark:text-light"
+      >
+        Wiadomość
       </label>
       <textarea
+        value={formData.message}
+        onChange={handleChange}
         id="message"
         name="message"
         required
-        className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 resize-none"
+        className="p-3 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-dark dark:focus:ring-light resize-none"
       />
 
       {/* Honeypot field */}
@@ -93,10 +128,10 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isLoading}
-        className={`p-3 text-white font-bold rounded-md transition-colors duration-300 ${
+        className={`p-3 text-light dark:text-dark font-bold rounded-md transition-colors duration-300 ${
           isLoading
-            ? "bg-gray-400 cursor-not-allowed"
-            : "bg-green-500 hover:bg-green-600"
+            ? "bg-gray-600 cursor-not-allowed"
+            : "bg-dark dark:bg-light hover:bg-gray-700 dark:hover:bg-gray-200"
         }`}
       >
         {isLoading ? "Sending..." : "Send"}

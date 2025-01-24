@@ -5,6 +5,7 @@ import IconComp from "../components/IconComp";
 import UsComponent from "../components/UsComponent";
 import Portfolio from "../components/Portfolio";
 import ContactHome from "../components/ContactHome";
+import { Helmet } from "react-helmet";
 export interface DarkMode {
   darkMode: boolean;
 }
@@ -12,6 +13,23 @@ export interface DarkMode {
 export default function Home({ darkMode }: DarkMode) {
   return (
     <>
+      {" "}
+      <Helmet>
+        <title>Studio Uszko</title>
+        <meta
+          name="description"
+          content="Poznaj nas blizej i dowiedz się co takiego tworzymy w naszym studio!"
+        />
+        <meta name="keywords" content="" />
+
+        <meta property="og:title" content="Amazing Website" />
+        <meta
+          property="og:description"
+          content="This is a great website about amazing topics."
+        />
+        <meta property="og:image" content="/studio-uszko-og.png" />
+        <meta property="og:url" content="/studio-uszko-og.png" />
+      </Helmet>
       <header className="min-h-[90vh] sm:min-h-[90vh] text-dark dark:text-light pt-4 md:p-10 mx-auto flex max-w-[90vw] md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl items-center justify-start">
         <div className="w-full flex flex-col md:flex-row">
           {/* Text Content */}
@@ -40,7 +58,6 @@ export default function Home({ darkMode }: DarkMode) {
           />
         </div>
       </header>
-
       <section className="w-[80%] md:w-auto h-[100%] sm:min-h-[30vh]  text-dark dark:text-light pt-2 md:p-10 mx-auto flex max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl items-center justify-start">
         <IconComp />
       </section>
@@ -49,7 +66,7 @@ export default function Home({ darkMode }: DarkMode) {
         <Portfolio darkMode={darkMode} />
       </section>
       <section>
-        <ContactHome />
+        <ContactHome darkMode={darkMode} />
       </section>
     </>
   );

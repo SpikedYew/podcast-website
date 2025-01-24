@@ -20,6 +20,9 @@ export default function UsAbout() {
               veritatis numquam neque accusamus, sed dolorem eius,
               exercitationem magni quia nihil corporis.
             </p>
+            <p className="pt-4 text-sm md:text-base dark:text-gray-200 text-gray-750 text-center md:text-left">
+              +48 223 109 102
+            </p>
             <div className="mt-4 text-center md:text-left">
               <button className="px-6 py-2 bg-dark text-white rounded-md">
                 Learn More
@@ -44,6 +47,9 @@ export default function UsAbout() {
               veritatis numquam neque accusamus, sed dolorem eius,
               exercitationem magni quia nihil corporis.
             </p>
+            <p className="pt-4 text-sm md:text-base dark:text-gray-200 text-gray-750 text-center md:text-left">
+              +48 223 109 102
+            </p>
             <div className="mt-4 text-center md:text-left">
               <button className="px-6 py-2 bg-dark text-white rounded-md">
                 Contact Us
@@ -67,6 +73,9 @@ export default function UsAbout() {
               dolores iste sit eos doloribus officia molestias quae deleniti
               veritatis numquam neque accusamus, sed dolorem eius,
               exercitationem magni quia nihil corporis.
+            </p>
+            <p className="pt-4 text-sm md:text-base dark:text-gray-200 text-gray-750 text-center md:text-left">
+              +48 223 109 102
             </p>
             <div className="mt-4 text-center md:text-left">
               <button className="px-6 py-2 bg-dark text-white rounded-md">

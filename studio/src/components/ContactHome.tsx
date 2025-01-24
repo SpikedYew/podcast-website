@@ -1,4 +1,8 @@
-export default function ContactHome() {
+export interface DarkMode {
+  darkMode: boolean;
+}
+
+export default function ContactHome({ darkMode }: DarkMode) {
   return (
     <>
       <div className="max-w-[92vw] sm:max-w-6xl mt-12 mb-12 mx-auto">
@@ -35,6 +39,7 @@ export default function ContactHome() {
             }}
           >
             <div
+              className=""
               style={{
                 overflow: "hidden",
                 background: "none",
@@ -45,7 +50,12 @@ export default function ContactHome() {
               <iframe
                 title="Google Map"
                 className="gmap_iframe"
-                style={{ width: "100%", height: "400px", border: "none" }}
+                style={{
+                  width: "100%",
+                  height: "400px",
+                  border: "none",
+                  filter: darkMode ? "invert(90%) hue-rotate(180deg)" : "",
+                }}
                 src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Zabrze Lompy 35&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 allowFullScreen
               />

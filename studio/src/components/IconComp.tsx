@@ -23,7 +23,7 @@ interface TypesIconData {
 export default function IconComp() {
   return (
     <>
-      <div className="mt-2 flex flex-wrap justify-around w-full h-[100%] p-4">
+      <div className="mt-2 mb-12 flex flex-wrap justify-around w-full h-[100%] p-4">
         {iconsData.map((val, i) => {
           const IconComponent = val.icon; // Access the icon dynamically
           return (

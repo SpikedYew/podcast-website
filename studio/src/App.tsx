@@ -46,7 +46,7 @@ function AnimateRoutes({ darkMode }: DarkMode) {
           path="/kontakt"
           element={
             <PageWrapper>
-              <Kontakt />
+              <Kontakt darkMode={darkMode} />
             </PageWrapper>
           }
         />
